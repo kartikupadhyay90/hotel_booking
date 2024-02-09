@@ -25,18 +25,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_09_091058) do
   create_table "hotels", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "rooms", force: :cascade do |t|
     t.integer "number"
-    t.string "hotel"
-    t.string "references"
+    t.integer "hotel_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["hotel_id"], name: "index_rooms_on_hotel_id"
   end
 
   add_foreign_key "bookings", "rooms"
+  add_foreign_key "rooms", "hotels"
 end
