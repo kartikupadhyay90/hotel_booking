@@ -4,7 +4,7 @@
 <ul>
 	<% @hotels.each do |hotel|%>
 		<li>
-			<%= link_to hotel.name, hotel %>
+			name: <%= link_to hotel.name, hotel %>
 		</li>
 	<%end%>
 </ul>
@@ -12,4 +12,5 @@
 	<h3>no hotels found</h3>
 <% end %>
 
+<%= link_to "create Hotel", new_hotel_path%>
 <%= link_to "create Hotel", new_hotel_path%>

@@ -1,7 +1,8 @@
-<h1><%= @hotel.name %></h1>
+<h1>name: <%= @hotel.name %></h1>
 
-<p><%= @hotel.address %></p>
+<p>address: <%= @hotel.address %></p>
 
+<%= link_to "create Booking", new_hotel_booking_path(@hotel)%>
 <%= link_to "show Room", hotel_rooms_path(@hotel)%>
 <%= link_to "create Room", new_hotel_room_path(@hotel)%>
 

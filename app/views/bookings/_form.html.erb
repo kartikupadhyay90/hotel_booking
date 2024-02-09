@@ -1,0 +1,21 @@
+<%= form_with model: [hotel, booking] do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :email %>
+  <%= form.email_field :email %>
+
+  <%= form.label :start_date %>
+  <%= form.date_field :start_date %>
+
+  <%= form.label :end_date %>
+  <%= form.date_field :end_date %>
+
+  <h2>Rooms</h2>
+  <% rooms.each do |room| %>
+    <%= form.check_box :room_ids, { multiple: true }, room.id %>
+    <%= form.label "room_#{room.id}", room.number %><br>
+  <% end %>
+
+  <%= form.submit "Create Booking" %>
+<% end %>
