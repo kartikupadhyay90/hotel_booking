@@ -1,0 +1,15 @@
+<h1>Rooms for Hotel <%= @hotel.name %></h1>
+
+<% if @rooms.length > 0 %>
+<ul>
+	<% @rooms.each do |room|%>
+		<li>
+			<%= room.number %>
+		</li>
+	<%end%>
+</ul>
+<% else %>
+	<h3>no rooms found</h3>
+<% end %>
+
+<%= link_to "create Room", new_hotel_room_path(@hotel)%>

@@ -2,4 +2,7 @@
 
 <p><%= @hotel.address %></p>
 
+<%= link_to "show Room", hotel_rooms_path(@hotel)%>
+<%= link_to "create Room", new_hotel_room_path(@hotel)%>
+
 <%= link_to "back", hotels_path %>
